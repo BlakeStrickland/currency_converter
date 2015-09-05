@@ -4,7 +4,7 @@ class Currency
   def initialize(amount, type)
     @amount = amount
     @type = type
-  end
+  end 
 
   def ==(equal)
     if @amount.==(equal.amount) && @type.==(equal.type)
