@@ -1,4 +1,5 @@
-require './differentcurrencycodeerror.rb'
+require './differentcurrencycodeerror'
+require './Converter'
 class Currency
 
   attr_accessor :amount, :type
@@ -16,21 +17,35 @@ class Currency
     else
       @amount = amount[1..-1].to_f
       @type = hash[amount[0]]
-
-
     end
   end
 
+   def convert(money)
+     if @type.!=(money.type)
+       money.type = Converter.new(money.type)
+       @type = money.type
+
+       puts "trying to convert"
+
+     end
+
+   end
+  # elsif @type != equal.type
+  # @type = Converter.new(equal)
+  # else
+  #@amount.==(equal.amount) &&
+
   def ==(equal)
-    if @amount.==(equal.amount) && @type.==(equal.type)
-   else
-     raise DifferentCurrencyCodeError
+    if  @type == equal.type
+      true
+    else
+      false
    end
   end
 
   def +(add)
     if @type == add.type
-      @amount + add.amount
+      @amount = @amount + add.amount
     else
       raise DifferentCurrencyCodeError
     end
@@ -38,7 +53,7 @@ class Currency
 
   def -(subtract)
     if @type == subtract.type
-      @amount - subtract.amount
+      @amount = @amount - subtract.amount
     else
       raise DifferentCurrencyCodeError
     end
@@ -46,7 +61,7 @@ class Currency
 
   def *(multiply)
     if @type == multiply.type
-      @amount * multiply.amount
+    @amount =  @amount * multiply.amount
     else
       raise DifferentCurrencyCodeError
     end

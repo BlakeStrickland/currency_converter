@@ -1,16 +1,16 @@
-require "./code"
-class Converter.new
+#require "./code"
+require "./currency"
+class Converter
+  attr_accessor :rate_exchange
+  def initialize(rate_exchange)
+    @rate_exchange = rate_exchange
+  end
 
-def rates(rate_exchange)
-  @rate_exchange = rate_exchange
+  def convert(money)
+    puts money.inspect
+    money = @rate_exchange[money.amount]
+    desired_currency = @rate_exchange[desired_currency]/ @rate_exchange[starting_currency.type]* starting_currency.amount
+    puts money.inspect
+    return (desired_currency)
+  end
 end
-
-def convert(money, desired_type)
-
-  money = @rate_exchange
-  type = @rate_exchange[money.amount]/ @rate_exchange[] *
-
-
-  return (amount, new_type)
-end
- 
