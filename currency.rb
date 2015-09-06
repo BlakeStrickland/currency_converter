@@ -20,16 +20,14 @@ class Currency
     end
   end
 
-   def convert(money)
-     if @type.!=(money.type)
-       money.type = Converter.new(money.type)
-       @type = money.type
-
-       puts "trying to convert"
-
-     end
-
-   end
+  #  def convert(money)
+  #    if @type.!=(money.type)
+  #      money.type = Converter.new(money.type)
+  #      @type = money.type
+  #      puts "trying to convert"
+  #    end
+   #
+  #  end
   # elsif @type != equal.type
   # @type = Converter.new(equal)
   # else
