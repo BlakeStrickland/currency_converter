@@ -44,7 +44,7 @@ class Currency
 
   def +(add)
     if @type == add.type
-      @amount = @amount + add.amount.to_f
+      @amount = add.amount.to_f
     else
       raise DifferentCurrencyCodeError
     end
