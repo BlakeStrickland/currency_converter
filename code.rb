@@ -10,8 +10,8 @@ desired_type = :USD
 money = bank.convert(money, desired_type)
 puts money.inspect
 money2 = bank.convert(money2, desired_type)
-money3 = money + money2
+money3 = money.amount + money2.amount
 
 puts money2.inspect
-puts money3
+puts money3.inspect
 #puts bank.convert(Currency.new(1, :USD), :USD) == Currency.new(1, :USD)
