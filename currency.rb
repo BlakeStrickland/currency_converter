@@ -11,9 +11,12 @@ class Currency
       "€" => :EUR,
       "¥" => :YEN
     }
+    if !hash.include?(type) && type != nil && !hash.has_value?(type)
+       raise UnknownCurrencyCodeError
+    end
 
     if type
-      @amount = amount
+      @amount = amount.to_f
       @type = type.to_sym
     else
       @amount = amount[1..-1].to_f
@@ -35,7 +38,7 @@ class Currency
   #@amount.==(equal.amount) &&
 
   def ==(equal)
-    if  @type == equal.type
+    if  @amount == amount.type && @type == equal.type
       true
     else
       false
