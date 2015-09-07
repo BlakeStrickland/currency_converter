@@ -4,6 +4,7 @@ class Currency
 
   attr_accessor :amount, :type
   def initialize(amount, type = nil)
+    #hash = Hash.new{ “$” => :USD, “€” => :EUR, “¥” => :YEN}
     hash=Hash.new{}
     hash= {
       "$" => :USD,
@@ -43,7 +44,7 @@ class Currency
 
   def +(add)
     if @type == add.type
-      @amount = @amount + add.amount
+      @amount = @amount + add.amount.to_f
     else
       raise DifferentCurrencyCodeError
     end
