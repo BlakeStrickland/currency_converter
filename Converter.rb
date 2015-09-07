@@ -9,7 +9,7 @@ class Converter
   def convert(money, desired_type)
     #puts money.inspect
     start_amount = money.amount
-    conversion_rate = @rate_exchange[desired_type]/ @rate_exchange[money.type]
+    conversion_rate = @rate_exchange[desired_type] / @rate_exchange[money.type]
     new_amount = start_amount.to_f * conversion_rate
     return (Currency.new(new_amount, desired_type))
   end
