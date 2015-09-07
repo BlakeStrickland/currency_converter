@@ -12,7 +12,9 @@ class Converter
     conversion_rate = @rate_exchange[desired_type]/ @rate_exchange[money.type]
     new_amount = start_amount.to_f * conversion_rate
     #desired_currency = @rate_exchange[desired_currency]/ @rate_exchange[starting_currency.type]* starting_currency.amount
-    puts money.inspect
-    return (new_amount)
+    #puts new_amount
+    #puts money.inspect
+
+    return (Currency.new(new_amount, desired_type))
   end
 end
